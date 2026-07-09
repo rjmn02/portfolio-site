@@ -2,23 +2,28 @@ import { motion } from "motion/react";
 import { Button } from "~/components/ui/button";
 import { Link } from "react-router";
 import { CV_DATA } from "~/lib/cv-data";
-import DotGrid from "./DotGrid";
 import { TypeAnimation } from 'react-type-animation';
+import { lazy, Suspense } from 'react';
+
+// Lazy load DotGrid to prevent SSR errors - it uses browser-only APIs
+const DotGrid = lazy(() => import('./DotGrid'));
 
 export default function Hero() {
   return (
     <section className="flex min-h-[100vh] items-center justify-center px-4 relative border-b-4 border-border">
-      <DotGrid
-        dotSize={4}
-        gap={20}
-        baseColor="#27272A"
-        activeColor="#8B2FD8"
-        proximity={120}
-        shockRadius={200}
-        shockStrength={4}
-        resistance={750}
-        returnDuration={1.5}
-      />
+      <Suspense fallback={null}>
+        <DotGrid
+          dotSize={4}
+          gap={20}
+          baseColor="#27272A"
+          activeColor="#8B2FD8"
+          proximity={120}
+          shockRadius={200}
+          shockStrength={4}
+          resistance={750}
+          returnDuration={1.5}
+        />
+      </Suspense>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

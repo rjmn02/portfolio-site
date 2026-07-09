@@ -1,6 +1,5 @@
 'use client';
 import React, { useRef, useEffect, useCallback, useMemo } from 'react';
-import { gsap } from 'gsap';
 
 const throttle = (func: (...args: any[]) => void, limit: number) => {
   let lastCall = 0;
@@ -75,13 +74,17 @@ const DotGrid: React.FC<DotGridProps> = ({
     lastX: 0,
     lastY: 0
   });
-  const inertiaReadyRef = useRef(false);
+  const gsapRef = useRef<any>(null);
 
-  // Initialize InertiaPlugin on client side only
+  // Dynamically import GSAP and InertiaPlugin to avoid SSR issues
   useEffect(() => {
-    import('gsap/InertiaPlugin').then((mod) => {
-      gsap.registerPlugin(mod.InertiaPlugin);
-      inertiaReadyRef.current = true;
+    Promise.all([
+      import('gsap'),
+      import('gsap/InertiaPlugin')
+    ]).then(([gsapMod, inertiaMod]) => {
+      const gsap = gsapMod.gsap || gsapMod.default;
+      gsap.registerPlugin(inertiaMod.InertiaPlugin || inertiaMod.default);
+      gsapRef.current = gsap;
     });
   }, []);
 
@@ -198,7 +201,8 @@ const DotGrid: React.FC<DotGridProps> = ({
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      if (!inertiaReadyRef.current) return;
+      const gsap = gsapRef.current;
+      if (!gsap) return;
 
       const now = performance.now();
       const pr = pointerRef.current;
@@ -249,7 +253,8 @@ const DotGrid: React.FC<DotGridProps> = ({
     };
 
     const onClick = (e: MouseEvent) => {
-      if (!inertiaReadyRef.current) return;
+      const gsap = gsapRef.current;
+      if (!gsap) return;
 
       const rect = canvasRef.current!.getBoundingClientRect();
       const cx = e.clientX - rect.left;
