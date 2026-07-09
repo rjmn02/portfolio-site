@@ -1,9 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
-import { InertiaPlugin } from 'gsap/InertiaPlugin';
-
-gsap.registerPlugin(InertiaPlugin);
 
 const throttle = (func: (...args: any[]) => void, limit: number) => {
   let lastCall = 0;
@@ -78,6 +75,15 @@ const DotGrid: React.FC<DotGridProps> = ({
     lastX: 0,
     lastY: 0
   });
+  const inertiaReadyRef = useRef(false);
+
+  // Initialize InertiaPlugin on client side only
+  useEffect(() => {
+    import('gsap/InertiaPlugin').then((mod) => {
+      gsap.registerPlugin(mod.InertiaPlugin);
+      inertiaReadyRef.current = true;
+    });
+  }, []);
 
   const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
   const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
@@ -192,6 +198,8 @@ const DotGrid: React.FC<DotGridProps> = ({
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
+      if (!inertiaReadyRef.current) return;
+
       const now = performance.now();
       const pr = pointerRef.current;
       const dt = pr.lastTime ? now - pr.lastTime : 16;
@@ -241,6 +249,8 @@ const DotGrid: React.FC<DotGridProps> = ({
     };
 
     const onClick = (e: MouseEvent) => {
+      if (!inertiaReadyRef.current) return;
+
       const rect = canvasRef.current!.getBoundingClientRect();
       const cx = e.clientX - rect.left;
       const cy = e.clientY - rect.top;
