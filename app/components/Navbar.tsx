@@ -20,8 +20,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 max-w-4xl">
-        <Link to="/" className="font-mono font-bold text-foreground">
-          rjmn.dev
+        <Link to="/" className="flex items-center gap-2 font-mono font-bold text-foreground">
+          <img src="/logo.png" alt="Logo" className="h-8 w-8" />
+          <span>rjmn.dev</span>
         </Link>
 
         {/* Desktop Navigation */}
