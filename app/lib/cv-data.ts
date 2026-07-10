@@ -94,7 +94,8 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
       details: [
         "Achieved 75-77% response relevance in human evaluation by building a retrieval-augmented chatbot using LLaMA3-8B grounded on Philippine traffic regulation documents.",
         "Mitigated LLM hallucination risks by implementing an embedding similarity search pipeline that goes through 20+ documents to retrieve relevant contexts before generating responses.",
-        "Implemented conversation memory management with 6-message context windowing to preserve dialogue coherence, and constructed a 79-question evaluation suite to benchmark retrieval accuracy across varying query complexity and regulatory domains."
+        "Implemented conversation memory management with 6-message context windowing to preserve dialogue coherence, and constructed a 79-question evaluation suite to benchmark retrieval accuracy across varying query complexity and regulatory domains.",
+        "Post-thesis, upgraded the RAG pipeline to Llama 70B via Groq API and increased text chunking from 200 to 1000 tokens with 200 token overlap, significantly reducing hallucinations and improving response accuracy."
       ]
     },
     {
