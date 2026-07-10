@@ -2,9 +2,6 @@ import type { Route } from "./+types/resume";
 import { Button } from "~/components/ui/button";
 import { Download } from "lucide-react";
 
-// Cache-busting timestamp - update when PDF is replaced
-const PDF_TIMESTAMP = "20250609";
-
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Resume — Christian Rhyss R. Jimenez" },
@@ -20,7 +17,7 @@ export default function Resume() {
           Resume
         </h1>
         <Button asChild className="font-mono" size="lg">
-          <a href={`/Jimenez_CV_2026.pdf?v=${PDF_TIMESTAMP}`} download>
+          <a href={"/Jimenez_CV_2026.pdf"} download>
             <Download className="h-4 w-4 mr-2" />
             Download PDF
           </a>
@@ -29,7 +26,7 @@ export default function Resume() {
 
       <div className="border border-border rounded-lg overflow-hidden bg-card">
         <iframe
-          src={`/Jimenez_CV_2026.pdf?v=${PDF_TIMESTAMP}`}
+          src={"/Jimenez_CV_2026.pdf"}
           className="w-full h-[100vh] min-h-[800px]"
           title="Christian Rhyss R. Jimenez Resume"
         />
