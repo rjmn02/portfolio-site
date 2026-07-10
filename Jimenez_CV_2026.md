@@ -16,7 +16,7 @@ Awards: President's Lister (2022-2023), Dean's Lister (2023-2024, 2026)
 **Frontend:** Next.js, React.js, Vite, Tailwind CSS, shadcn/ui, TanStack Table, HTML
 **Backend:** FastAPI, NestJS, REST API, RBAC, JWT
 **Databases & ORM:** PostgreSQL, Supabase, Prisma, SQLAlchemy
-**AI/ML:** RAG Pipelines, Groq API, Hugging Face Embeddings
+**AI/ML:** RAG Pipelines, Groq, Hugging Face, LLMs, NLP, Langchain
 **Developer Tools:** Git, GitHub, Postman, Bruno, Docker, Swagger, Claude Code, Cisco Packet Tracer
 **Certifications:** Cisco Certified Network Associate (CCNA), Cisco Network Security
 
@@ -26,11 +26,12 @@ Awards: President's Lister (2022-2023), Dean's Lister (2023-2024, 2026)
 
 ## **Retrieval-Augmented Chatbot for Traffic Regulations | Undergraduate Thesis**
 
-Github | Demo | React, Vite, Tailwind, FastAPI, PostgreSQL, Groq API, Hugging Face Embeddings
+Github | Demo | React, Vite, Tailwind, FastAPI, PostgreSQL, Groq, Hugging Face, LLMs, NLP
 
-- Achieved 75-77% response relevance in human evaluation by building a retrieval-augmented chatbot using LLaMA3-8B grounded on Philippine traffic regulation documents. 
+- Achieved 75-77% response relevance in human evaluation by building a retrieval-augmented chatbot using LLaMA3-8B via Groq API grounded on Philippine traffic regulation documents. 
 - Mitigated LLM hallucination risks by implementing an embedding similarity search pipeline that goes through 20+ documents to retrieve relevant contexts before generating responses.
 - Implemented conversation memory management with 6-message context windowing to preserve dialogue coherence, and constructed a 79-question evaluation suite to benchmark retrieval accuracy across varying query complexity and regulatory domains.
+- Post-thesis, upgraded the RAG pipeline to Llama 70B via Groq API and increased text chunking from 200 to 1000 tokens with 200 token overlap, significantly reducing hallucinations and improving response accuracy.
 
 ## **Healthcare Management Information System | Commissioned Academic Project**
 
