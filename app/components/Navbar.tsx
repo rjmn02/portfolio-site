@@ -32,9 +32,8 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-mono text-sm transition-colors hover:text-primary ${
-                  isActive ? "font-bold text-foreground" : "text-muted-foreground"
-                }`}
+                className={`font-mono text-sm transition-colors hover:text-primary ${isActive ? "font-bold text-foreground" : "text-muted-foreground"
+                  }`}
               >
                 {item.name}
               </Link>
@@ -62,16 +61,15 @@ export default function Navbar() {
               exit={{ opacity: 0, height: 0 }}
               className="absolute top-full left-0 w-full border-b border-border bg-background md:hidden"
             >
-              <div className="flex flex-col gap-2 p-4">
+              <div className="flex flex-col items-center gap-2 p-4">
                 {navItems.map((item) => {
                   const isActive = location.pathname === item.path || (item.path === "/" && location.pathname === "");
                   return (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`font-mono py-2 text-sm transition-colors hover:text-primary ${
-                        isActive ? "font-bold text-foreground" : "text-muted-foreground"
-                      }`}
+                      className={`font-mono py-2 text-sm transition-colors hover:text-primary ${isActive ? "font-bold text-foreground" : "text-muted-foreground"
+                        }`}
                     >
                       {item.name}
                     </Link>
