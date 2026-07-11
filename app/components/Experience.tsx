@@ -24,7 +24,7 @@ export default function Experience() {
                     {exp.role} — {exp.org}
                   </CardTitle>
                   <p className="font-mono text-sm text-muted-foreground">
-                    {exp.dates}
+                    {exp.location ? `${exp.location} | ` : ""}{exp.dates}
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -59,7 +59,7 @@ export default function Experience() {
                     {edu.degree} — {edu.school}
                   </CardTitle>
                   <p className="font-mono text-sm text-muted-foreground">
-                    {edu.location}
+                    {edu.location} | {edu.dates}
                   </p>
                 </CardHeader>
                 <CardContent>

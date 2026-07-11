@@ -1,6 +1,6 @@
 export const CV_DATA = {
   name: "Christian Rhyss R. Jimenez",
-  location: "Davao City, Philippines",
+  location: "Davao del Sur, Davao City, PH",
   email: "rhyssjmn@gmail.com",
   phone: "+63 991 218 5656",
   github: "https://github.com/rjmn02",
@@ -14,7 +14,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
     "Backend": ["FastAPI", "NestJS", "REST API", "RBAC", "JWT"],
     "Databases & ORM": ["PostgreSQL", "Supabase", "Prisma", "SQLAlchemy"],
     "AI/ML": ["RAG Pipelines", "Groq", "Hugging Face", "LLMs", "NLP", "Langchain"],
-    "Developer Tools": ["Git", "GitHub", "Bruno", "Postman", "Docker", "Swagger", "Claude Code", "Cisco Packet Tracer"],
+    "Developer Tools": ["Git", "GitHub", "Postman", "Bruno", "Docker", "Swagger", "Claude Code", "Cisco Packet Tracer"],
     "Certifications": ["Cisco Certified Network Associate (CCNA)", "Cisco Network Security"],
     "Spoken Languages": ["Cebuano", "Tagalog", "English"],
   },
@@ -22,6 +22,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
     {
       role: "Software Developer Intern",
       org: "Clever Kobweb",
+      location: "Remote",
       dates: "May 2025 – June 2025",
       description: [
         "Independently delivered a full-stack Vehicle Management System end-to-end, meeting 100% of client requirements within a 200+ hour development timeline.",
@@ -31,6 +32,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
     {
       role: "Backend Developer",
       org: "Ateneo SAMAHAN System Developers",
+      location: "Davao City, PH",
       dates: "August 2025 – June 2026",
       description: [
         "Collaborated with a student development team building backend services for internal university systems using robust API design patterns and cloud-native deployment strategies."
@@ -42,6 +44,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
       degree: "Bachelor of Science in Computer Science",
       school: "Ateneo de Davao University",
       location: "Davao City, PH",
+      dates: "June 2026",
       awards: "President's Lister (2022-2023), Dean's Lister (2023-2024, 2026)"
     }
   ],
@@ -76,7 +79,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
     {
       id: 3,
       title: "Vehicle Management System",
-      description: "Software Developer Intern (Clever Kobweb Remote)",
+      description: "Clever Kobweb",
       tech: ["FastAPI", "React", "Vite", "SQLAlchemy", "JWT", "TanStack Table"],
       github: "https://github.com/rjmn02/ojt-project",
       demo: "#",
