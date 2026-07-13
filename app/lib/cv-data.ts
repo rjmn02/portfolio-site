@@ -13,7 +13,7 @@ Outside of development, I'm into mechanical keyboards and gaming, and I find joy
     "Frontend": ["Next.js", "React.js", "Vite", "Tailwind CSS", "shadcn/ui", "TanStack Table", "HTML"],
     "Backend": ["FastAPI", "NestJS", "REST API", "RBAC", "JWT"],
     "Databases & ORM": ["PostgreSQL", "Supabase", "Prisma", "SQLAlchemy"],
-    "AI/ML": ["RAG Pipelines", "Groq", "Hugging Face", "LLMs", "NLP", "Langchain"],
+    "AI/ML": ["RAG Pipelines", "Groq", "Hugging Face", "LLMs", "NLP", "MCPs", "Langchain"],
     "Developer Tools": ["Git", "GitHub", "Postman", "Bruno", "Docker", "Swagger", "Claude Code", "Cisco Packet Tracer"],
     "Certifications": ["Cisco Certified Network Associate (CCNA)", "Cisco Network Security"],
     "Spoken Languages": ["Cebuano", "Tagalog", "English"],
